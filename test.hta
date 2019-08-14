@@ -1,0 +1,122 @@
+<html>
+<head>
+  <title>PHP-HTA Sample Application</title>
+  <hta:application id="PC" 
+  applicationname="HTA-UI" 
+  border="dialog"
+  caption="yes"
+  singleinstance="yes"
+  sysmenu="yes"
+  maximizebutton="yes"
+  minimizebutton="yes"
+  navigable="yes"
+  showintaskbar="yes"
+  icon="" 
+  contextmenu="no" />
+</head>
+
+<script language="VBScript" src="UI-Core.vbs"></script>
+<script language="VBScript" src="App-Core.vbs"></script>
+<script language="Javascript" src="Scripts/Javascript/JSFunctions.js"></script>
+
+<script language="Javascript">
+setInterval(function() { document.getElementById('date').innerHTML = humanDate(); }, 1000);
+</script>
+
+<body onmouseover=menu_onmouseover style="font:12pt Arial"> 
+
+<div id=menu style="position:absolute; left:0; top:0; width:623px; height:23px; 
+  padding-top:2px; background-color:lightgrey; 
+  font:normal 9pt Microsoft Sans Serif; z-Index:100"> 
+</div> 
+
+<span id=dropmenu style="font:normal 9pt Microsoft Sans Serif"></span> 
+<br />
+
+<div id="date" name="date" style="font-size:66%;">Initializing Date</div> 
+
+  <img align="center" src="Resources/Banner.png" alt="" />
+
+  <div class="navigation">
+    <a class="active" href="test.hta">Home</a>
+    <a href="">Page 2</a>
+    <a href="">Page 3</a>
+    <a href="">Page 4</a>
+    <a href="settings.hta" style="float:right;"><strong>&#8801;</strong></a>
+  </div>
+
+  <div id="spacer" style="width: 200px; height: 47px; float:left; display:inline-block"></div>
+
+  <div id="header" style="color:#ffffff; height:300px; text-align:center; font-family:Tahoma; filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#1A3560', EndColorStr='#475d7f')">
+    <br />
+    <h4><p>Start putting settings page content in here!!!</p></h4>
+    <hr />
+  </div>
+
+  <div style="text-align:left; margin-left:5%; float:left; width:90%;"></div>
+
+</body>
+
+<style>
+/* Add a black background color to the top navigation. */
+.navigation {
+    background-color: #1A3560;
+    overflow: hidden; }
+/* Style the links inside the navigation bar. */
+.navigation a {
+    float: left;
+    color: #1A3560;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px; }
+/* Change the color of links on hover. */
+.navigation a:hover {
+    background-color: #ddd;
+    color: #1A3560; }
+/* Add a color to the active/current link. */
+.navigation a.active {
+    background-color: #1A3560;
+    color: white; }
+/* Add main styles for button1 class. */
+.button1 {
+  -moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+  -webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+  box-shadow: 0px 0px 0px 2px #9fb4f2;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+  background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+  background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+  background-color:#7892c2;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  border:1px solid #4e6096;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:14px;
+  padding:2px 6px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #283966; }
+/* Add hover styles for button1 class. */
+.button1:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+  background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+  background-color:#476e9e; }
+/* Add styles for when button1 class is clicked. */
+.button1:active {
+  position:relative;
+  top:1px; }
+</style>
+
+</html>
