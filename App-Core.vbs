@@ -34,5 +34,5 @@ Set objShell = CreateObject("WScript.Shell")
 Function Bootstrap(BinaryToRun, Command)
   run = binariesDirectory & BinaryToRun & Command 
   objShell.exec(run)
-  Bootstrap = objShellExec.StdOut.ReadAll
+  Bootstrap = objShell.StdOut.ReadAll
 End Function
