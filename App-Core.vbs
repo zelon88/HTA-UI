@@ -33,7 +33,7 @@ Set objShell = CreateObject("WScript.Shell")
 'The result will be that the PHP binary is used to execute a PHP script.
 'If Async is set to TRUE, HTA-UI will wait for the command to finish before continuing.
 Function Bootstrap(BinaryToRun, Command, Async)
-  Dim objShell, objShellExec, run, tempFile, tempData
+  Dim objShellExec, tempFile, tempData
   tempFile = tempDirectory & "temp.txt"
   If Async = TRUE Then 
     async = TRUE
