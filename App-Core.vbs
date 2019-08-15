@@ -27,12 +27,24 @@ Set objShell = CreateObject("WScript.Shell")
 '--------------------------------------------------
 'Bootstrap some other program or code in the Binaries folder.
 'Example for bootstrapping a PHP script.
-'  Bootstrap(binariesDirectory & "PHP\php.exe", scriptsDirectory & "PHP\test.php")
+'  Bootstrap("PHP\php.exe", scriptsDirectory & "PHP\test.php")
 'The above function call uses the Bootstrap() function to call 
 'Binaries\PHP\php.exe with an argument that evaluates to Scripts\PHP\test.php.
 'The result will be that the PHP binary is used to execute a PHP script.
-Function Bootstrap(BinaryToRun, Command)
-  run = binariesDirectory & BinaryToRun & Command 
-  objShell.exec(run)
-  Bootstrap = objShell.StdOut.ReadAll
+'If Async is set to TRUE, HTA-UI will wait for the command to finish before continuing.
+Function Bootstrap(BinaryToRun, Command, Async)
+  Dim objShell, objShellExec, run, tempFile, tempData
+  tempFile = tempDirectory & "temp.txt"
+  If Async = TRUE Then 
+    async = TRUE
+  Else 
+    async = ""
+  End If
+  Set objShell = CreateObject("WScript.Shell")
+  run = "C:\Windows\System32\cmd.exe /c " & binariesDirectory & BinaryToRun & " " & Command & " > " & tempFile
+  objShell.Run run, 0, async
+  Set tempData = objFSO.OpenTextFile(tempFile, 1)
+  Bootstrap = tempData.ReadAll()
+  tempData.Close
+  objFSO.DeleteFile(tempFile)
 End Function
