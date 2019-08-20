@@ -56,3 +56,44 @@ function toggleVisibility(id) {
   else
      e.style.display = 'block'; }
 // / --------------------
+
+// / --------------------
+// / A function to save the current settings to the settings cache.
+// / Change these to actual settings, with the name of the file set to the name of the setting.
+// / Example:  LogDir setting should be stored in LogDir.dat and the setting name is LogDir.
+function updateSetting(setting) {
+  var input = '';
+  if (setting == 'setting1') { 
+  	var file = 'Cache/setting1.dat';
+  	var input = document.getElementById('setting1').value; }
+  if (setting == 'setting2') { 
+  	var file = 'Cache/setting2.dat';
+    var input = document.getElementById('setting2').value; }
+  if (setting == 'setting3') { 
+    var file = 'Cache/setting3.dat';
+    var input = document.getElementById('setting3').value; }
+  if (setting == 'setting4') { 
+    var file = 'Cache/setting4.dat';
+    var input = document.getElementById('setting4').value; }
+  if (setting == 'setting5') { 
+    var file = 'Cache/setting5.dat';
+    var input = document.getElementById('setting5').value; }
+  var data = input;
+  var fso = new ActiveXObject("Scripting.FileSystemObject");
+  var s = fso.OpenTextFile(file, 2, true);
+  s.WriteLine(data);
+  s.Close(); }
+// / --------------------
+
+// / --------------------
+// / A function to load the log location from the settings cache.
+// / Load the setting by name coinciding with setting file.
+// / Example:  LogDir setting can be retrieved from LogDir.dat using name LogDir.
+function getSetting(setting) {
+  var fso = new ActiveXObject('Scripting.FileSystemObject'),
+  iStream = fso.OpenTextFile('Cache/' + setting + '.dat', 1, false);
+  while(!iStream.AtEndOfStream) { 
+    data = iStream.ReadLine(); }        
+  iStream.Close(); 
+  return data; }
+// / --------------------
