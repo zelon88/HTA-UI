@@ -25,7 +25,6 @@ function callVBSave() {
   saveSettings(); }
 // / --------------------
 
-
 // / --------------------
 // / A function to read the contents of a text file and replace the <body> of a page with it's contents.
 function readFile(path) { 
@@ -35,7 +34,6 @@ function readFile(path) {
     document.body.innerHTML += iStream.ReadLine() + '<br/>'; }        
   iStream.Close(); }
 // / --------------------
-
 
 // / --------------------
 // / A function to read the contents of a text file and return the results.
