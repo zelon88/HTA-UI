@@ -1,0 +1,7 @@
+This is a placeholder file. 
+
+This Temp directory is a required component of this application. You can delete this file and anything in here, but 
+
+...DO NOT...
+
+delete this folder.
