@@ -26,7 +26,7 @@ Dim objFSO, strComputer, objWMIService, scriptsDirectory, binariesDirectory, _
  colItems, objItem, intHorizontal, intVertical, nLeft, nTop, sItem, helpLocSetting, _
  version, currentDirectory, appName, developerName, developerURL, windowHeight, windowWidth
 
-version = "v1.2"
+version = "v1.3"
 
 helpLocSetting = "https://github.com/zelon88"
 appName = "HTA-UI"
